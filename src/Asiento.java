@@ -6,6 +6,7 @@ public class Asiento {
     private int ubicacionColumna;
 
     //Métodos
+    // Hooooola Commit2
     public void getUbicacion()
     {
 
