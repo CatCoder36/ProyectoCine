@@ -20,6 +20,8 @@ public class Cliente{
         this.anioNacimiento = anioNacimiento;
     }
 
+    //QUE PASA GENTE :P
+
     public int getDiaNacimiento() {
         return diaNacimiento;
     }
