@@ -1,6 +1,5 @@
 import java.time.Period;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Cliente{
     private String nombreCliente;
@@ -22,42 +21,28 @@ public class Cliente{
 
     //QUE PASA GENTE :P
 
-    public int getDiaNacimiento() {
-        return diaNacimiento;
-    }
 
-    public int getMesNacimiento() {
-        return mesNacimiento;
-    }
+    public int verificadorEdad(){
 
-    public int getAnioNacimiento() {
-        return anioNacimiento;
-    }
-
-    public String verificadorEdad(){
-
-        String fechaNacimiento = diaNacimiento+"/"+mesNacimiento+"/"+anioNacimiento;
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate fechaNac = LocalDate.parse(fechaNacimiento, fmt);
-        LocalDate ahora = LocalDate.now();
-        Period edadPersona = Period.between(fechaNac, ahora);
+        Period edadPersona = Period.between(LocalDate.of(anioNacimiento,mesNacimiento,diaNacimiento), LocalDate.now());
 
         if (edadPersona.getYears() < 10){
-            return String.valueOf(edadPersona.getYears());
+            return edadPersona.getYears();
         }else if (edadPersona.getYears() >= 60){
-            return String.valueOf(edadPersona.getYears());
+            return edadPersona.getYears();
         }else{
-            return String.valueOf(edadPersona.getYears());
+            return edadPersona.getYears();
         }
     }
 
-    int precioBoleto = 10; //esta variable es temporal, hasta que se termine el metodo definirPrecio
-    public void addPuntos(){
+
+    public String addPuntos(int precioBoleto){
         if (precioBoleto == 40 || precioBoleto == 60) {
             contadorPuntos = contadorPuntos + 50;
         }else{
             contadorPuntos = contadorPuntos + 25;
         }
+        return "PUNTOS: "+contadorPuntos;
     }
 
     @Override
