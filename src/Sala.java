@@ -6,7 +6,8 @@ public class Sala {
     private String codigoSala;
     private int capacidadFila;
     private int capacidadColumna;
-    ArrayList <Asiento> listaAsientos;
+    private ArrayList <Asiento> listaAsientos;
+    AdministradorAsientos administradorAsientos;
     ArrayList <String> idFila;
     ArrayList <String> idColumna;
 
@@ -16,14 +17,72 @@ public class Sala {
         this.capacidadFila = capacidadFila;
         this.capacidadColumna = capacidadColumna;
         listaAsientos = new ArrayList<>();
+
+        generandoAsientos();
+        administradorAsientos = new AdministradorAsientos(listaAsientos);
+
+
     }
 
-    public void addListaAsientos(Asiento asiento){
-        listaAsientos.add(asiento);
+    public int getNumeroDeAsientos(){
+        return listaAsientos.size();
     }
 
-    public ArrayList<Asiento> getListaAsientos() {
+    //Gestion de asientos ocupados y libres
+    public void gestionAsientosSala(){
+        //TODO
+
+
+    }
+    //Se generan los asientos en la clase para asignarlas una ubicacion de manera automatica
+    private void generandoAsientos(){
+
+        char ubicacionFila;
+        int ubicacionColumna;
+        int contadorFilasDisponibles = 0;
+        int asciiValor = 65; //65 es A en el sistema ascii
+
+        for (int i = 0; i< cantidadAsientos;){
+            ubicacionColumna = 1;
+            ubicacionFila = (char) (contadorFilasDisponibles+asciiValor);
+            contadorFilasDisponibles++;
+
+            for( int h = 0; h < capacidadColumna; h++ ){
+
+                Asiento asiento = new Asiento(ubicacionFila, ubicacionColumna);
+                ubicacionColumna++;
+
+                listaAsientos.add(asiento);
+                i++;
+                if(i == cantidadAsientos){
+                    break;
+                }
+
+            }
+
+        }
+
+    }
+
+    public String imprimirListaAsientos(){
+        String imprimirLista = "LISTA ASIENTOS: \n";
+        String ubicacionAsiento;
+
+        for(int i = 0; i < listaAsientos.size(); i++){
+            ubicacionAsiento = listaAsientos.get(i).getUbicacion()+" ";
+            imprimirLista += ubicacionAsiento;
+        }
+
+
+        return  imprimirLista;
+    }
+
+    public ArrayList<Asiento> getListaAsientos(){
         return listaAsientos;
     }
+
+
+
+
 
 }
