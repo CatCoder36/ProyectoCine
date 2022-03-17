@@ -1,5 +1,5 @@
 public class Asiento {
-
+// ASIENTO, SILLA, dwdw
 //Atributos
 
     private char ubicacionFila;
