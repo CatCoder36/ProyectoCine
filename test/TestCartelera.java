@@ -4,7 +4,6 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class TestCartelera {
     @Test
-
     public void testMostrarCartelera(){
         Cartelera cartelera = new Cartelera();
 
@@ -56,6 +55,7 @@ public class TestCartelera {
 
 
         cartelera.mostrarPeliculas();
+        //System.out.println(cartelera.mostrarPeliculas());
         //System.out.println(cartelera.carteleraMostrada());
         assertEquals(5, cartelera.numeroDePeliculas());
         assertEquals("PUBLICO |" +
@@ -68,7 +68,7 @@ public class TestCartelera {
 
         //System.out.println(cartelera.mostrarPeliculaIDNombre("Batman"));
         cartelera.mostrarPeliculaIDNombre("Batman");
-        assertEquals(cartelera.getPeliculaSeleccionadaNombre(), cartelera.mostrarPeliculaIDNombre("Batman"));
+        assertEquals(cartelera.getPeliculaSeleccionadaNombre(), cartelera.mostrarPeliculaIDNombre("batman"));
         //System.out.println(cartelera.getPeliculaSeleccionadaNombre());
 
 
@@ -78,5 +78,7 @@ public class TestCartelera {
 
 
     }
+
+
 
 }
