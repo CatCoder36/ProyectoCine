@@ -1,5 +1,5 @@
 public class Asiento {
-// ASIENTO, SILLA, dwdw
+// PRUEBA GIT
 //Atributos
 
     private char ubicacionFila;
