@@ -1,3 +1,3 @@
 public enum Estado {
-    LIBRE,OCUPADO
+    LIBRE, OCUPADO
 }
