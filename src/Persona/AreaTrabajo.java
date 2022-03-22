@@ -1,0 +1,7 @@
+package Persona;
+
+public enum AreaTrabajo {
+
+    ADMINISTRACION, LIMPIEZA, BOLETERIA, ALIMENTOS, SALAS, PROYECTOR, SEGURIDAD
+
+}
