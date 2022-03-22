@@ -71,6 +71,7 @@ public class Sala {
         for(int i = 0; i < listaAsientos.size(); i++){
             ubicacionAsiento = listaAsientos.get(i).getUbicacion()+" ";
             imprimirLista += ubicacionAsiento;
+
         }
 
 

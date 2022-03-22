@@ -1,10 +1,9 @@
-import junit.framework.TestCase;
 import org.testng.annotations.Test;
 import static org.testng.AssertJUnit.assertEquals;
 import java.util.ArrayList;
 
 
-public class TestBanco extends TestCase {
+public class TestBanco {
 
 
     // Instancias de Banco

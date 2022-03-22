@@ -25,7 +25,7 @@ public class TestCliente {
 
         cliente1.addPuntos(60);
 
-        Assert.assertEquals("NOMBRE: Juan Rocabado\nPUNTOS ACUMULADOS: 50\nCARNET IDENTIDDAD: 9865321\nNACIONALIDAD: Boliviano\nFECHA NACIMIENTO: 10/5/2004", cliente1.toString());
+        Assert.assertEquals("NOMBRE: JUAN ROCABADO\nPUNTOS ACUMULADOS: 50\nCARNET IDENTIDDAD: 9865321\nNACIONALIDAD: Boliviano\nFECHA NACIMIENTO: 10/5/2004", cliente1.toString());
     }
 
 }

@@ -1,5 +1,6 @@
 import java.time.Period;
 import java.time.LocalDate;
+import java.util.Locale;
 
 public class Cliente{
     private String nombreCliente;
@@ -11,7 +12,7 @@ public class Cliente{
     private int anioNacimiento;
 
     public Cliente(String nombreCliente, int carnetIdentidadCliente, String nacionalidadCliente, int diaNacimiento, int mesNacimiento, int anioNacimiento){
-        this.nombreCliente = nombreCliente;
+        this.nombreCliente = nombreCliente.toUpperCase();
         this.carnetIdentidadCliente = carnetIdentidadCliente;
         this.nacionalidadCliente = nacionalidadCliente;
         this.diaNacimiento = diaNacimiento;
@@ -20,6 +21,15 @@ public class Cliente{
     }
 
     //QUE PASA GENTE :P
+    public String getNombreCliente(){
+        return nombreCliente;
+    }
+    public int getCarnetIdentidadCliente(){
+        return carnetIdentidadCliente;
+    }
+    public int getContadorPuntos(){
+        return contadorPuntos;
+    }
 
 
     public int verificadorEdad(){

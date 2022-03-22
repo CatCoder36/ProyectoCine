@@ -36,6 +36,7 @@ public class TestCartelera {
         assertEquals("Español Latino", peliculaSpider.idiomaPelicula());
 
 
+
         Pelicula peliculaUncharted = new Pelicula(4,"UNCHARTED: FUERA DEL MAPA", "Ruben Fleischer", Clasificacion.CLASIFICACION_B, "Ingles", "17 febrero 2022", 130.0, Dimension.D2, Genero.ACCION);
         peliculaUncharted.addInfo("Una precuela de la saga de videojuegos Uncharted, \n\t\tdonde descubrimos cómo Drake llego a conocer y hacerse amigo de\n\t\tSully.");
         cartelera.addPeliculas(peliculaUncharted);
@@ -43,6 +44,7 @@ public class TestCartelera {
         assertEquals("UNCHARTED: FUERA DEL MAPA", peliculaUncharted.mostrarPeliculaSeleccionadaNombre());
         assertEquals(4, peliculaUncharted.mostrarPeliculaSeleccionadaID());
         assertEquals("Ingles", peliculaUncharted.idiomaPelicula());
+
 
 
         Pelicula peliculaSING2 = new Pelicula(5,"SING 2", "Garth Jennings", Clasificacion.CLASIFICACION_A, "Español Latino", "25 diciembre 2021", 120.0, Dimension.D2, Genero.ANIMACION);
@@ -54,8 +56,12 @@ public class TestCartelera {
         assertEquals("Español Latino", peliculaSING2.idiomaPelicula());
 
 
+        //  Mostrar Cartelera
+
         cartelera.mostrarPeliculas();
         //System.out.println(cartelera.mostrarPeliculas());
+
+        // Cartelera mostrada al publico
         //System.out.println(cartelera.carteleraMostrada());
         assertEquals(5, cartelera.numeroDePeliculas());
         assertEquals("PUBLICO |" +
@@ -66,15 +72,17 @@ public class TestCartelera {
                 "NOMBRE: SING 2\t| CLASIFICACION: CLASIFICACION_A\t| IDIOMA: Español Latino\n", cartelera.carteleraMostrada());
 
 
+        // Eleccion de Pelicula por nombre o ID
+
         //System.out.println(cartelera.mostrarPeliculaIDNombre("Batman"));
-        cartelera.mostrarPeliculaIDNombre("Batman");
-        assertEquals(cartelera.getPeliculaSeleccionadaNombre(), cartelera.mostrarPeliculaIDNombre("batman"));
+        cartelera.mostrarPeliculaIDNombre("Sing 2");
         //System.out.println(cartelera.getPeliculaSeleccionadaNombre());
+        assertEquals(cartelera.getPeliculaSeleccionadaNombre(), cartelera.mostrarPeliculaIDNombre("sing 2"));
 
 
-        //System.out.println(cartelera.mostrarPeliculaIDNombre(5));
-        cartelera.mostrarPeliculaIDNombre(5);
-        assertEquals(cartelera.getPeliculaSeleccionadaID(), cartelera.mostrarPeliculaIDNombre(5));
+        //System.out.println(cartelera.mostrarPeliculaIDNombre(3));
+        cartelera.mostrarPeliculaIDNombre(3);
+        assertEquals(cartelera.getPeliculaSeleccionadaID(), cartelera.mostrarPeliculaIDNombre(3));
 
 
     }

@@ -2,8 +2,10 @@ import java.util.ArrayList;
 
 public class Cartelera {
 
-    static ArrayList<Pelicula> listaPeliculas;
 
+    static final int precio2D = 40;
+    static final int precio3D = 60;
+    static ArrayList<Pelicula> listaPeliculas;
 
     public Cartelera(){
         listaPeliculas = new ArrayList<>();
@@ -38,8 +40,14 @@ public class Cartelera {
         String nombrePelicula = "";
         for (Pelicula peliculaMostrar: listaPeliculas){
             if (may.equals(peliculaMostrar.mostrarPeliculaSeleccionadaNombre())){
-                nombrePelicula = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar;
-                peliculaSeleccionadaNombre = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar;
+                if (peliculaMostrar.dimension == Dimension.D2){
+                    nombrePelicula = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio2D + " bs";
+                    peliculaSeleccionadaNombre = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio2D + " bs";
+                }
+                else if (peliculaMostrar.dimension == Dimension.D3){
+                    nombrePelicula = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio3D + " bs";
+                    peliculaSeleccionadaNombre = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio3D + " bs";
+                }
             }
         }
         return nombrePelicula;
@@ -51,8 +59,14 @@ public class Cartelera {
         String nombrePelicula = "";
         for (Pelicula peliculaMostrar: listaPeliculas){
             if (ID == peliculaMostrar.mostrarPeliculaSeleccionadaID()){
-                nombrePelicula = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar;
-                peliculaSeleccionadaID = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar;
+                if (peliculaMostrar.dimension == Dimension.D2){
+                    nombrePelicula = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio2D + " bs";
+                    peliculaSeleccionadaID = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio2D + " bs";
+                }
+                else if (peliculaMostrar.dimension == Dimension.D3){
+                    nombrePelicula = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio3D + " bs";
+                    peliculaSeleccionadaID = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio3D + " bs";
+                }
             }
         }
         return nombrePelicula;
