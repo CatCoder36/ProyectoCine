@@ -1,15 +1,17 @@
 import java.util.ArrayList;
 
 public class Cartelera {
-
-
     static final int precio2D = 40;
     static final int precio3D = 60;
     static ArrayList<Pelicula> listaPeliculas;
+    static ArrayList<HorarioPelicula> horarios;
+
 
     public Cartelera(){
         listaPeliculas = new ArrayList<>();
+        horarios = new ArrayList<>();
     }
+
 
     public void addPeliculas(Pelicula pelicula){    // ADMIN
         listaPeliculas.add(pelicula);
@@ -19,8 +21,21 @@ public class Cartelera {
         listaPeliculas.remove(pelicula);
     }
 
-    private String peliculaMostradaPublico = "";
+    public void addHoraPelicula(HorarioPelicula horarioPelicula){
+        horarios.add(horarioPelicula);
+    }
 
+    public String mostrarHorarioPelicula(){
+        String hora = "";
+        for (HorarioPelicula horarioPelicula: horarios){
+            hora = hora + horarioPelicula.horas();
+        }
+        return hora;
+    }
+
+
+
+    private String peliculaMostradaPublico = "";
     public String mostrarPeliculas(){             // USER
         String mostrarPeli = "";
         for (Pelicula mostrarpeliculas: listaPeliculas){
@@ -33,8 +48,8 @@ public class Cartelera {
         return mostrarPeli;
     }
 
-    private String peliculaSeleccionadaNombre = "";
 
+    private String peliculaSeleccionadaNombre = "";
     public String mostrarPeliculaIDNombre(String Nombrepelicula){       // USER
         String may = Nombrepelicula.toUpperCase();
         String nombrePelicula = "";
@@ -53,8 +68,8 @@ public class Cartelera {
         return nombrePelicula;
     }
 
-    private String peliculaSeleccionadaID = "";
 
+    private String peliculaSeleccionadaID = "";
     public String mostrarPeliculaIDNombre(int ID){              // USER
         String nombrePelicula = "";
         for (Pelicula peliculaMostrar: listaPeliculas){
@@ -71,6 +86,7 @@ public class Cartelera {
         }
         return nombrePelicula;
     }
+
 
     public ArrayList<Pelicula> mostrarListaDePeliculas(){   // ADMIN
         return listaPeliculas;
