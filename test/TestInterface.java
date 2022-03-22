@@ -1,3 +1,3 @@
-public class TestInterface {
+public class  TestInterface {
 
 }
