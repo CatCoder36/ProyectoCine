@@ -1,47 +1,66 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
 public class Boleteria {
 
-    private int Asientos;
-    private int precioUnidadAsiento;
-    private int precioPelicula3D = 60;
-    public HashMap<String,Integer > descuentoEdad = new HashMap<String , Integer>();
+    static ArrayList<Cliente> listaclientes;
+    private String listaAsientos = "";
 
-
-
-    private int precioPelicula2D = 40;
-
-    private String dia;
-    private String tarjetaCredito;
-
-
-    public void añadirDescuentoEdad()
-    {
-        descuentoEdad.put("MenorDiezAños", 15); // %
-        descuentoEdad.put("TarjetaCreditoLosElefantes", 12);
-        descuentoEdad.put("MayorEdad", 50);
+    public Boleteria(){
+        listaclientes = new ArrayList<>();
     }
 
-    public void definirPrecioPelicula()
-    {
-
+    public void getListaAsientosDisponibles(String datoEsperado){
+        listaAsientos = listaAsientos + datoEsperado;
     }
-    public void generadorBoleto()
-    {
 
+    public void getListaAsientosSinReservar(String datoEsperado){
+        listaAsientos = "";
+        listaAsientos = listaAsientos + datoEsperado;
     }
-    public void descuentoPrecio()
-    {
 
+    public String mostrarAsientosDisponibles(){
+        return listaAsientos;
     }
-    public void addMetodoPago()
-    {
 
+    public void addCliente(Cliente cliente){
+        listaclientes.add(cliente);
     }
-    public void mostrarMetodoPago()
-    {
 
+    public String mostrarListadeClientes(){
+        String clientes = "";
+        for (Cliente mostrarClientes: listaclientes){
+            clientes = clientes + Util.lineaCorta + "\n" + mostrarClientes.toString() + "\n";
+        }
+        return clientes;
+    }
+
+    public String mostrarClienteEspecifico(String nombreCliente, int carnetIdentidad){
+        String may = nombreCliente.toUpperCase();
+        String datosCliente = "";
+        for (Cliente datoCliente: listaclientes){
+            if (may.equals(datoCliente.getNombreCliente()) || carnetIdentidad == datoCliente.getCarnetIdentidadCliente()){
+                datosCliente = Util.lineaCorta + "\n" + "CLIENTE " + datoCliente.getNombreCliente() + " |\n" + Util.lineaCorta + "\n" + datoCliente;
+            }
+        }
+        return datosCliente;
+    }
+
+
+
+
+    public void definirPrecioPelicula() {
+    }
+
+    public void generadorBoleto() {
+    }
+
+    public void descuentoPrecio() {
+    }
+
+    public void addMetodoPago() {
+    }
+
+    public void mostrarMetodoPago() {
     }
 
 }

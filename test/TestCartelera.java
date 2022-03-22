@@ -3,10 +3,10 @@ import org.testng.annotations.Test;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class TestCartelera {
+    Cartelera cartelera = new Cartelera();
+
     @Test
     public void testMostrarCartelera(){
-        Cartelera cartelera = new Cartelera();
-
         Pelicula peliculaBatman = new Pelicula(1,"BATMAN", "Matt Reves", Clasificacion.CLASIFICACION_B, "Español Latino", "3 de Marzo de 2022", 190.0, Dimension.D3, Genero.ACCION);
         peliculaBatman.addInfo("La trama es desconocida");
         cartelera.addPeliculas(peliculaBatman);
@@ -14,7 +14,12 @@ public class TestCartelera {
         assertEquals("BATMAN", peliculaBatman.mostrarPeliculaSeleccionadaNombre());
         assertEquals(1, peliculaBatman.mostrarPeliculaSeleccionadaID());
         assertEquals("Español Latino", peliculaBatman.idiomaPelicula());
-
+        HorarioPelicula horarioPelicula = new HorarioPelicula("BATMAN");
+        horarioPelicula.addHorarios(20, 30);
+        horarioPelicula.addHorarios(16, 20);
+        horarioPelicula.addHorarios(9, 30);
+        cartelera.addHoraPelicula(horarioPelicula);
+        System.out.println(cartelera.mostrarHorarioPelicula());
 
 
         Pelicula peliculaExo = new Pelicula(2,"EL EXORCISMO DE DIOS", "Alejandro Hidalgo", Clasificacion.CLASIFICACION_C, "Español Latino", "03 marzo 2022", 110.0, Dimension.D2, Genero.TERROR);
@@ -24,7 +29,6 @@ public class TestCartelera {
         assertEquals("EL EXORCISMO DE DIOS", peliculaExo.mostrarPeliculaSeleccionadaNombre());
         assertEquals(2, peliculaExo.mostrarPeliculaSeleccionadaID());
         assertEquals("Español Latino", peliculaExo.idiomaPelicula());
-
 
 
         Pelicula peliculaSpider = new Pelicula(3,"SPIDERMAN: NO WAY HOME", "Jon Watts", Clasificacion.CLASIFICACION_B, "Español Latino", "15 diciembre 2021", 160.0, Dimension.D3, Genero.ACCION);
@@ -54,9 +58,8 @@ public class TestCartelera {
         assertEquals("Español Latino", peliculaSING2.idiomaPelicula());
 
 
+        /* Mostrar Cartelera */
         cartelera.mostrarPeliculas();
-        //System.out.println(cartelera.mostrarPeliculas());
-        //System.out.println(cartelera.carteleraMostrada());
         assertEquals(5, cartelera.numeroDePeliculas());
         assertEquals("PUBLICO |" +
                 "\nNOMBRE: BATMAN\t| CLASIFICACION: CLASIFICACION_B\t| IDIOMA: Español Latino\n" +
@@ -66,19 +69,21 @@ public class TestCartelera {
                 "NOMBRE: SING 2\t| CLASIFICACION: CLASIFICACION_A\t| IDIOMA: Español Latino\n", cartelera.carteleraMostrada());
 
 
-        //System.out.println(cartelera.mostrarPeliculaIDNombre("Batman"));
-        cartelera.mostrarPeliculaIDNombre("Batman");
-        assertEquals(cartelera.getPeliculaSeleccionadaNombre(), cartelera.mostrarPeliculaIDNombre("batman"));
+
+
+
+
+        /* Mostrar Pelicula por el nombre o por el ID*/
+        cartelera.mostrarPeliculaIDNombre("Sing 2");
         //System.out.println(cartelera.getPeliculaSeleccionadaNombre());
+        assertEquals(cartelera.getPeliculaSeleccionadaNombre(), cartelera.mostrarPeliculaIDNombre("sing 2"));
 
 
-        //System.out.println(cartelera.mostrarPeliculaIDNombre(5));
-        cartelera.mostrarPeliculaIDNombre(5);
-        assertEquals(cartelera.getPeliculaSeleccionadaID(), cartelera.mostrarPeliculaIDNombre(5));
+        cartelera.mostrarPeliculaIDNombre(3);
+        //System.out.println(cartelera.getPeliculaSeleccionadaID());
+        assertEquals(cartelera.getPeliculaSeleccionadaID(), cartelera.mostrarPeliculaIDNombre(3));
+
 
 
     }
-
-
-
 }
