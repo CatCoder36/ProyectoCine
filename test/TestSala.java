@@ -1,5 +1,5 @@
 import org.testng.annotations.Test;
-import static org.junit.Assert.*;
+
 import static org.testng.AssertJUnit.assertEquals;
 
 public class TestSala {
@@ -20,6 +20,7 @@ public class TestSala {
     @Test
     public void testAsientosDisponibles(){
         Sala salaPrueba1 = new Sala(26,"A",2,12);
+        Sala salaPrueba2 = new Sala(5,"B",1,10);
 
         String datoEsperado = salaPrueba1.administradorAsientos.getListaAsientosDisponibles();
 
@@ -32,6 +33,17 @@ public class TestSala {
         String datoesperado2 = salaPrueba1.administradorAsientos.getListaAsientosDisponibles();
 
         assertEquals("1A 3A 4A 5A 6A 7A 8A 9A 10A 11A 12A 1B 2B 3B 4B 5B 6B 7B 8B 9B 10B 11B 12B 1C 2C ",datoesperado2);
+
+    }
+
+    @Test
+    public void testAgregarPelicula(){
+        Pelicula peliculaBatman = new Pelicula(1,"BATMAN", "Matt Reves", Clasificacion.CLASIFICACION_B, "Español Latino", "3 de Marzo de 2022", 190.0, Dimension.D3, Genero.ACCION);
+        Sala salaPrueba1 = new Sala(24,"A",8,12);
+
+        salaPrueba1.agregarPeliculaSala(peliculaBatman);
+
+        System.out.println(salaPrueba1.getPrintPeliculasEnSala());
     }
 
 

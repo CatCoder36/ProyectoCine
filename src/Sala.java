@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Sala {
     private int cantidadAsientos;
@@ -7,9 +6,11 @@ public class Sala {
     private int capacidadFila;
     private int capacidadColumna;
     private ArrayList <Asiento> listaAsientos;
+    private ArrayList<Pelicula> peliculasPorReproducir = new ArrayList<>();
+
     AdministradorAsientos administradorAsientos;
-    ArrayList <String> idFila;
-    ArrayList <String> idColumna;
+
+
 
     public Sala(int cantidadAsientos, String codigoSala, int capacidadFila, int capacidadColumna){
         this.cantidadAsientos = cantidadAsientos;
@@ -81,8 +82,29 @@ public class Sala {
         return listaAsientos;
     }
 
+    public boolean agregarPeliculaSala(Pelicula pelicula){
+        if (peliculasPorReproducir.size() <= 5){
+            peliculasPorReproducir.add(pelicula);
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
+    public String getPrintPeliculasEnSala(){
+        String peliculasEnSala = "PELICULAS EN SALA:\n";
+        for (int i = 0; i<peliculasPorReproducir.size(); i++){
+            peliculasEnSala += peliculasPorReproducir.get(i).mostrarInfo()+"\n\n";
+        }
+        return peliculasEnSala;
+    }
 
+    public String getNombreSala(){
+        return "SALA - "+codigoSala;
+    }
 
-
+    public String getCodigoSala() {
+        return codigoSala;
+    }
 }
