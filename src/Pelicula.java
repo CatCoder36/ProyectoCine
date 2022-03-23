@@ -3,15 +3,18 @@ public class Pelicula {
     private String infoPelicula;
     private final String nombrePelicula;
     private final String director;
-    Clasificacion clasificacion;
     private final String idioma;
     private final String estreno;
     private final int ID;
-
     private final Double duracion;
-
+    Clasificacion clasificacion;
     Dimension dimension;
     Genero genero;
+
+    private int hora1;
+    private int hora2;
+
+
 
 
     public Pelicula(int ID, String nombrePelicula, String director, Clasificacion clasificacion, String idioma, String estreno, Double duracion, Dimension dimension, Genero genero) {
@@ -24,7 +27,18 @@ public class Pelicula {
         this.duracion = duracion;
         this.dimension = dimension;
         this.genero = genero;
+
     }
+
+    public void addHorarios(int hora1, int hora2){
+        this.hora1 = hora1;
+        this.hora2 = hora2;
+    }
+
+    public String mostrarHoraPelicula(){
+        return hora1 + ":" + hora2;
+    }
+
     public void addInfo(String infoPelicula){
         this.infoPelicula = infoPelicula;
     }
@@ -45,6 +59,8 @@ public class Pelicula {
         return "\t\t| SINOPSIS: " + infoPelicula;
     }
 
+
+
     public String toString() {
 
         if (dimension == Dimension.D2) {
@@ -57,7 +73,7 @@ public class Pelicula {
                     "\n\t\t| ESTRENO: " + estreno +
                     "\n\t\t| DIRECTOR: " + director +
                     "\n\t\t| IDIOMA: " + idioma +
-                    "\n\t\t| SINOPSIS: " + infoPelicula + "\n";
+                    "\n" + mostrarInfo() + "\n";
         }
 
         else{
@@ -70,7 +86,7 @@ public class Pelicula {
                     "\n\t\t| ESTRENO: " + estreno +
                     "\n\t\t| DIRECTOR: " + director +
                     "\n\t\t| IDIOMA: " + idioma +
-                    "\n\t\t| SINOPSIS: " + infoPelicula + "\n";
+                    "\n" + mostrarInfo() + "\n";
         }
     }
 
