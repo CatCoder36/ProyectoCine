@@ -121,7 +121,7 @@ public abstract class Persona {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-
+    //TEST
     @Override
     public String toString(){
         return "NOMBRE: "+nombre+" "+apellidoPaterno+" "+apellidoMaterno+"\n" +
@@ -132,5 +132,4 @@ public abstract class Persona {
     }
 
     public abstract String toString(Persona persona);
-
 }

@@ -1,15 +1,13 @@
 package Persona;
 
 public class AdministrarPuntos {
-
+    //TEST
     int contadorPuntos;
 
-    public String aumentarPuntos(int precio){
-        if (precio == 40 || precio == 60){
-            contadorPuntos += 50;
-        }else{
-            contadorPuntos += 25;
-        }
+    public String aumentarPuntos(int puntos, double rebaja, int cantidadBoletos){
+        int totalPuntos = (int) (puntos - (puntos * rebaja));
+        int totalGanados = totalPuntos * cantidadBoletos;
+        contadorPuntos += totalGanados;
         return "PUNTOS: "+contadorPuntos;
     }
 

@@ -50,7 +50,7 @@ public class TestBoleteria {
         boleteria.addCliente(cliente5);*/
 
         //  MOSTRAR LA LISTA DE TODOS NUESTROS CLIENTES REGISTRADOS
-
+/*
         boleteria.mostrarListadeClientes();
         assertEquals(Util.lineaCorta + "\n" +
                 "NOMBRE: JUAN ROCABADO\n" +
@@ -90,7 +90,7 @@ public class TestBoleteria {
         boleteria.mostrarClienteEspecifico("matias hidalgo", 75211656);
         /*cliente4.addPuntos(60);
         cliente4.addPuntos(40);
-        cliente4.addPuntos(20);*/
+        cliente4.addPuntos(20);
         assertEquals(Util.lineaCorta + "\n" +
                 "CLIENTE MATIAS HIDALGO |\n" +
                 Util.lineaCorta + "\n" +
@@ -103,4 +103,5 @@ public class TestBoleteria {
 
     }
 }
-*/
+
+            */
