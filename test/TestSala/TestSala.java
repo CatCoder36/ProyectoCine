@@ -1,3 +1,5 @@
+package TestSala;
+
 import Cartelera.Clasificacion;
 import Cartelera.Dimension;
 import Cartelera.Genero;

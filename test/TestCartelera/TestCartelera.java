@@ -1,4 +1,4 @@
-/*import Cartelera.Cartelera;
+package TestCartelera;/*import Cartelera.Cartelera;
 import Cartelera.Dimension;
 import Cartelera.Genero;
 import Cartelera.Pelicula;*/

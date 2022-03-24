@@ -1,3 +1,5 @@
+package TestCine;
+
 import Cine.Administrador;
 import Cine.Cine;
 import org.junit.Test;

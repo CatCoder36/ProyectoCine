@@ -1,3 +1,5 @@
+package TestPersona;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,7 +13,7 @@ public class TestCliente {
     }
 
     @Test
-    public void TestPuntos(){
+    public void TestPersona.TestPuntos(){
         Cliente cliente1 = new Cliente("Juan Rocabado", 9865321, "Boliviano", 10, 05, 2004);
 
 
