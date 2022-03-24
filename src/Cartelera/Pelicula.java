@@ -1,6 +1,7 @@
 package Cartelera;
+import Util.Util;
 
-import Utils.Util;
+import java.util.ArrayList;
 
 public class Pelicula {
 
@@ -14,10 +15,7 @@ public class Pelicula {
     Clasificacion clasificacion;
     Dimension dimension;
     Genero genero;
-
-    private int hora1;
-    private int hora2;
-
+    static ArrayList<HorarioPelicula> horarios;
 
 
 
@@ -31,17 +29,39 @@ public class Pelicula {
         this.duracion = duracion;
         this.dimension = dimension;
         this.genero = genero;
-
+        horarios = new ArrayList<>();
     }
 
-    public void addHorarios(int hora1, int hora2){
-        this.hora1 = hora1;
-        this.hora2 = hora2;
+
+    public int horariosSize(){
+        return horarios.size();
     }
 
-    public String mostrarHoraPelicula(){
-        return hora1 + ":" + hora2;
+    public void addHoraPelicula(HorarioPelicula horarioPelicula){
+        horarios.add(horarioPelicula);
     }
+
+    public void limpiarHorarioPelicula(){
+        horarios.clear();
+    }
+
+    private String peliculaHorario = "";
+    private String hora = "";
+    public void iniciarHorarioPelicula(){
+        for (HorarioPelicula horarioPelicula: horarios){
+            hora = hora + horarioPelicula.toString();
+            peliculaHorario = peliculaHorario + horarioPelicula.getNombrePelicula();
+        }
+    }
+
+    public String getNombrePeliculaHorario(){
+        return peliculaHorario;
+    }
+
+    public String infoHorario(){
+        return hora;
+    }
+
 
     public void addInfo(String infoPelicula){
         this.infoPelicula = infoPelicula;

@@ -1,50 +1,34 @@
 package Cartelera;
 
-import Utils.*;
+import Util.Util;
 
 import java.util.ArrayList;
+import java.util.Objects;
+
 
 public class Cartelera {
 
-
-
-    static final int precio2D = 40;
-    static final int precio3D = 60;
+    private int precio2D;
+    private int precio3D;
     static ArrayList<Pelicula> listaPeliculas;
-    static ArrayList<HorarioPelicula> horarios;
 
 
     public Cartelera(){
         listaPeliculas = new ArrayList<>();
-        horarios = new ArrayList<>();
-    }
 
+    }
+    public void establecerPrecioEntrada(int d2, int d3){
+        this.precio2D = d2;
+        this.precio3D = d3;
+    }
 
     public void addPeliculas(Pelicula pelicula){    // ADMIN
         listaPeliculas.add(pelicula);
     }
 
-    public void removePelicula(Pelicula pelicula){
-        listaPeliculas.remove(pelicula);
-    }
-
     public void deletePeliculas(Pelicula pelicula){     // ADMIN
         listaPeliculas.remove(pelicula);
     }
-
-    public void addHoraPelicula(HorarioPelicula horarioPelicula){
-        horarios.add(horarioPelicula);
-    }
-
-
-    public String mostrarHorarioPelicula(){
-        String hora = "";
-        for (HorarioPelicula horarioPelicula: horarios){
-            hora = hora + horarioPelicula.horas();
-        }
-        return hora;
-    }
-
 
 
     private String peliculaMostradaPublico = "";
@@ -52,7 +36,6 @@ public class Cartelera {
         String mostrarPeli = "";
         for (Pelicula mostrarpeliculas: listaPeliculas){
             mostrarPeli = mostrarPeli + mostrarpeliculas.toString();
-
             peliculaMostradaPublico = peliculaMostradaPublico + "NOMBRE: " + mostrarpeliculas.mostrarPeliculaSeleccionadaNombre()
                     + "\t| CLASIFICACION: " + mostrarpeliculas.clasificacion
                     + "\t| IDIOMA: " + mostrarpeliculas.idiomaPelicula() + "\n";
@@ -68,12 +51,12 @@ public class Cartelera {
         for (Pelicula peliculaMostrar: listaPeliculas){
             if (may.equals(peliculaMostrar.mostrarPeliculaSeleccionadaNombre())){
                 if (peliculaMostrar.dimension == Dimension.D2){
-                    nombrePelicula = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio2D + " bs";
-                    peliculaSeleccionadaNombre = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio2D + " bs";
+                    nombrePelicula = precios(may);
                 }
-                else if (peliculaMostrar.dimension == Dimension.D3){
-                    nombrePelicula = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio3D + " bs";
-                    peliculaSeleccionadaNombre = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio3D + " bs";
+
+                else{
+                    nombrePelicula = precios(may);
+
                 }
             }
         }
@@ -87,12 +70,10 @@ public class Cartelera {
         for (Pelicula peliculaMostrar: listaPeliculas){
             if (ID == peliculaMostrar.mostrarPeliculaSeleccionadaID()){
                 if (peliculaMostrar.dimension == Dimension.D2){
-                    nombrePelicula = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio2D + " bs";
-                    peliculaSeleccionadaID = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio2D + " bs";
+                    nombrePelicula = precios(ID);
                 }
-                else if (peliculaMostrar.dimension == Dimension.D3){
-                    nombrePelicula = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio3D + " bs";
-                    peliculaSeleccionadaID = Utils.Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio3D + " bs";
+                else{
+                    nombrePelicula = precios(ID);
                 }
             }
         }
@@ -121,4 +102,44 @@ public class Cartelera {
     }
 
 
+    public String precios(String nombrePelicula){
+        String mostraPrecio23D = "";
+        for (Pelicula peliculaPrecioMostrar: listaPeliculas){
+            if (Objects.equals(nombrePelicula, peliculaPrecioMostrar.mostrarPeliculaSeleccionadaNombre())){
+                if (peliculaPrecioMostrar.dimension == Dimension.D2){
+                    mostraPrecio23D = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaPrecioMostrar + "\t\t| PRECIO: " + precio2D + " bs"
+                            + "\n\t\t" +  Util.lineaCorta1Linea + "\n\t\tHORARIOS: \n" + peliculaPrecioMostrar.infoHorario() + "\n";
+                    peliculaSeleccionadaNombre = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaPrecioMostrar + "\t\t| PRECIO: " + precio2D + " bs" + "\n\t\t"
+                            +  Util.lineaCorta1Linea + "\n\t\tHORARIOS: \n" + peliculaPrecioMostrar.infoHorario() + "\n" ;
+                }
+                else if (peliculaPrecioMostrar.dimension == Dimension.D3){
+                    mostraPrecio23D = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaPrecioMostrar + "\t\t| PRECIO: " + precio3D + " bs"
+                            + "\n\t\t" +  Util.lineaCorta1Linea + "\n\t\tHORARIOS: \n" + peliculaPrecioMostrar.infoHorario() + "\n";
+                    peliculaSeleccionadaNombre = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaPrecioMostrar + "\t\t| PRECIO: " + precio3D + " bs" + "\n\t\t"
+                            +  Util.lineaCorta1Linea + "\n\t\tHORARIOS: \n" + peliculaPrecioMostrar.infoHorario() + "\n" ;
+                }
+            }
+        }
+        return mostraPrecio23D;
+    }
+
+    public String precios(int idPelicula){
+        String mostraPrecio23D = "";
+        for (Pelicula peliculaPrecioMostrar: listaPeliculas){
+            if (peliculaPrecioMostrar.mostrarPeliculaSeleccionadaID() == idPelicula) {
+                if (peliculaPrecioMostrar.dimension == Dimension.D2) {
+                    mostraPrecio23D = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaPrecioMostrar + "\t\t| PRECIO: " + precio2D + " bs"
+                            + "\n\t\t" + Util.lineaCorta1Linea + "\n\t\tHORARIOS: \n" + peliculaPrecioMostrar.infoHorario() + "\n";
+                    peliculaSeleccionadaID = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaPrecioMostrar + "\t\t| PRECIO: " + precio2D + " bs" + "\n\t\t"
+                            + Util.lineaCorta1Linea + "\n\t\tHORARIOS: \n" + peliculaPrecioMostrar.infoHorario() + "\n";
+                } else {
+                    mostraPrecio23D = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaPrecioMostrar + "\t\t| PRECIO: " + precio3D + " bs"
+                            + "\n\t\t" + Util.lineaCorta1Linea + "\n\t\tHORARIOS: \n" + peliculaPrecioMostrar.infoHorario() + "\n";
+                    peliculaSeleccionadaID = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaPrecioMostrar + "\t\t| PRECIO: " + precio3D + " bs" + "\n\t\t"
+                            + Util.lineaCorta1Linea + "\n\t\tHORARIOS: \n" + peliculaPrecioMostrar.infoHorario() + "\n";
+                }
+            }
+        }
+        return mostraPrecio23D;
+    }
 }

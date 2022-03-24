@@ -2,8 +2,6 @@ package Cine;
 
 import Cartelera.Clasificacion;
 import Cartelera.Dimension;
-import Cartelera.Genero;
-import Cartelera.Pelicula;
 import Salas.Sala;
 
 import java.util.Scanner;
@@ -74,7 +72,11 @@ public class Administrador {
         }
     }
 
-    public void agregarPelicula(Cine cine){
+
+
+
+
+    public void agregarPelicula(){
         System.out.println("Inserte el nombre de la pelicula");
         String nombrePelicula = scanner.next();
         System.out.println("Inserte el ID de la pelicula");
@@ -82,7 +84,7 @@ public class Administrador {
         System.out.println("Inserte director");
         String director = scanner.next();
         System.out.println("Indique la clasifiación:Inserte\n1 para A ; 2 para B ; 3 para C");
-        Clasificacion clasificacion = null;
+        Clasificacion clasificacion;
         int clasifiacionNum = scanner.nextInt();
         switch (clasifiacionNum){
             case 1:
@@ -108,7 +110,7 @@ public class Administrador {
         double duracion = scanner.nextDouble();
 
         System.out.println("Inserte la dimension de la pelicula\n1 para 2D ; 2 para 3D");
-        Dimension dimension = null;
+        Dimension dimension;
         int dimensionNum = scanner.nextInt();
 
         switch (dimensionNum){
@@ -124,68 +126,8 @@ public class Administrador {
                 System.out.println("Valor no valido");
         }
 
-    System.out.println("Insserte el genero de la pelicula: Acción, Animación, Ciencia ficción, Comedia,\n" +
-                "Drama, Fantasía, Musical, Romance, Suspenso, Terror, Documental.");
-    Genero genero = null;
-    String generoPelicula = scanner.next().toUpperCase();
-
-        switch (generoPelicula) {
-            case "ACCION":
-                genero = Genero.ACCION;
-                break;
-            case "ANIMACION":
-                genero = Genero.ANIMACION;
-                break;
-            case "CIENCIA FICCION":
-                genero = Genero.CIENCIA;
-                break;
-            case "COMEDIA":
-                genero = Genero.COMEDIA;
-                break;
-            case "DRAMA":
-                genero = Genero.DRAMA;
-                break;
-            case "FANTASIA":
-                genero = Genero.FANTASIA;
-                break;
-            case "MUSICAL":
-                genero = Genero.MUSICAL;
-                break;
-            case "ROMANCE":
-                genero = Genero.ROMANCE;
-                break;
-            case "SUSPENSO":
-                genero = Genero.SUSPENSO;
-                break;
-            case "TERROR":
-                genero = Genero.TERROR;
-                break;
-            case "DOCUMENTAL":
-                genero = Genero.DOCUMENTAL;
-                break;
-            default:
-                System.out.println("Valor invalido");
-                break;
-        }
-
-        System.out.println("Inserte fecha esterno  de la pelicula");
-        String fechaEstreno = scanner.next();
-
-    //En esta parte agregamos la pelicula a la cartelera
-
-    Pelicula pelicula = new Pelicula(idPelicula, nombrePelicula, director, clasificacion, idioma,fechaEstreno,duracion,dimension,genero );
-    cine.agregarPelicula(pelicula);
 
     }
-
-   /*public void quitarPelicula (Cine cine){
-        System.out.println("Insrte la pelicula el id de pelicula que dee quitar");
-        int idPelicula = scanner.nextInt();
-        cine.quitarPelicula(idPelicula);
-    }*/
-    //TODO
-
-
 
 
 
