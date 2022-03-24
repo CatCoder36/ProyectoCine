@@ -2,7 +2,7 @@ package Persona;
 
 public class Empleado extends Persona{
 
-    AreaTrabajo areaTrabajo;
+    private AreaTrabajo areaTrabajo ;
 
     public Empleado(String nombre, String apellidoPaterno, String apellidoMaterno, int carnetIdentidad, String nacionalidad, int diaNacimiento, int mesNacimiento, int anoNacimiento, String sexo, AreaTrabajo areaTrabajo) {
         super(nombre, apellidoPaterno, apellidoMaterno, carnetIdentidad, nacionalidad, diaNacimiento, mesNacimiento, anoNacimiento, sexo);
@@ -27,5 +27,9 @@ public class Empleado extends Persona{
     @Override
     public String toString(Persona persona) {
         return persona.toString()+"DISPONIBILIDAD PARA TRABAJAR: "+verificarEdad()+"\n AREA DE TRABAJO: "+getAreaTrabajo();
+    }
+
+    public AreaTrabajo getCargoEmpleado(){
+        return areaTrabajo;
     }
 }
