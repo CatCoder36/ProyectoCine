@@ -1,9 +1,7 @@
 import Cine.*;
 import Persona.Cliente;
-import Persona.Persona;
-import Salas.AdministradorAsientos;
 import Salas.Sala;
-import Utils.Util;
+import Util.Util;
 import org.junit.Test;
 //import org.testng.annotations.Test;
 
@@ -45,10 +43,10 @@ public class TestBoleteria {
 
         Cliente cliente1 = new Cliente("Denis Jorge", "Gandarillas", "Delgado", 9865321, "Boliviano", 10, 05, 2004, "Masculino"); 
         boleteria.addCliente(cliente1);
-        boleteria.addCliente(cliente2);
+        /*boleteria.addCliente(cliente2);
         boleteria.addCliente(cliente3);
         boleteria.addCliente(cliente4);
-        boleteria.addCliente(cliente5);
+        boleteria.addCliente(cliente5);*/
 
         //  MOSTRAR LA LISTA DE TODOS NUESTROS CLIENTES REGISTRADOS
 
@@ -89,9 +87,9 @@ public class TestBoleteria {
         //  MOSTRAR CLIENTE POR EL NOMBRE Y SU CARNET
 
         boleteria.mostrarClienteEspecifico("matias hidalgo", 75211656);
-        cliente4.addPuntos(60);
+        /*cliente4.addPuntos(60);
         cliente4.addPuntos(40);
-        cliente4.addPuntos(20);
+        cliente4.addPuntos(20);*/
         assertEquals(Util.lineaCorta + "\n" +
                 "CLIENTE MATIAS HIDALGO |\n" +
                 Util.lineaCorta + "\n" +
