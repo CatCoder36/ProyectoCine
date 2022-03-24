@@ -4,7 +4,6 @@ import Cine.Cine;
 import Persona.AreaTrabajo;
 import Util.Util;
 import Cine.RegistradorUI;
-import jdk.swing.interop.SwingInterOpUtils;
 
 public class Interfaz {
     static Cine cine = new Cine("Mi cinema Family");
@@ -26,6 +25,7 @@ public class Interfaz {
 
         switch (opcionDeInicio){
             case 1:
+                cargandoEmpleado();
                 break;
             case 2:
                 cargandoAdmnistrador();
@@ -35,14 +35,11 @@ public class Interfaz {
                 login();
         }
 
-
-
-
     }
 
     public static void loginRegistrador(){
 
-        RegistradorUI.escojerPeliculasCartelera();
+       RegistradorUI.escojerPeliculasCartelera();
 
     }
 
@@ -73,8 +70,7 @@ public class Interfaz {
             login();
         }
 
-
-    }
+   }
 
     public static void loginAdministrador(Cine cine){
         System.out.println("BIENVENIDO A OPCIONES DE ADMINISTRADOR: SELECCIONES EL NÚMERO DE OPCION");
