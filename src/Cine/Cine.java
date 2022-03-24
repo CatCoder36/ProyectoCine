@@ -65,13 +65,14 @@ public class Cine {
         cartelera.deletePeliculasPorId(idPelicula);
     }
 
-    /*public AreaTrabajo getEmpleadoAreaTrabajoPorID(int idEmpleado){
+    public AreaTrabajo getEmpleadoAreaTrabajoPorID(int idEmpleado){
         for(int empleadoActual = 0; empleadoActual < listaEmpleados.size(); empleadoActual++){
             if(listaEmpleados.get(empleadoActual).getCarnetIdentidad()==idEmpleado){
                 return listaEmpleados.get(empleadoActual).getCargoEmpleado();
             }
         }
-    }*/
+        return null;
+    }
 
    /* public void agregarEmpleado(Empleado empleado){
         listaEmpleados.add(empleado);
