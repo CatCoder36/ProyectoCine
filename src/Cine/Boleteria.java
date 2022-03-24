@@ -32,11 +32,12 @@ public class Boleteria {
         return listaAsientos;
     }
 
-    public void addCliente(Cliente cliente){
+    /*public void addCliente(Cliente cliente){
         listaclientes.add(cliente);
-    }
+    }*/
 
-    public String mostrarListadeClientes(){
+    //ESTE CODIFO FUÉ TRASLADADO A REGISTROCLIENTES
+    /*public String mostrarListadeClientes(){
         String clientes = "";
         for (Cliente mostrarClientes: listaclientes){
             clientes = clientes + Util.lineaCorta + "\n" + mostrarClientes.toString() + "\n";
@@ -53,7 +54,7 @@ public class Boleteria {
             }
         }
         return datosCliente;
-    }
+    }*/
 
 
 

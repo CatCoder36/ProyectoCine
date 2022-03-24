@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 //import static org.testng.AssertJUnit.assertEquals;
 
 
+/*
 public class TestBoleteria {
 
     @Test
@@ -102,3 +103,4 @@ public class TestBoleteria {
 
     }
 }
+*/

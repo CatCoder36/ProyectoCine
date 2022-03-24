@@ -24,6 +24,7 @@ public class Cliente extends Persona{
         return persona.toString()+"CLASIFICACION: "+verificacionEdad();
     }
 
+
     /*@Override
     public String toString(Empleado.Persona persona){
         return persona.toString()+"\nCLASIFICACION: "+verificacionEdad();
