@@ -1,3 +1,5 @@
+package Persona;
+
 public class AdministrarPuntos {
 
     int contadorPuntos;

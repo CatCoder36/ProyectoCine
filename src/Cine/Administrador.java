@@ -1,3 +1,9 @@
+package Cine;
+
+import Cartelera.Clasificacion;
+import Cartelera.Dimension;
+import Salas.Sala;
+
 import java.util.Scanner;
 
 public class Administrador {
@@ -34,7 +40,7 @@ public class Administrador {
 
 
     public void cambiarNombreCine(Cine cine ){
-        System.out.println("Inserte el nuevo nombre del Cine");
+        System.out.println("Inserte el nuevo nombre del Cine.Cine");
         String nombreCine = scanner.next();
         cine.setNombreCine(nombreCine);
     }

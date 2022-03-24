@@ -1,3 +1,7 @@
+package Salas;
+
+import Cartelera.Pelicula;
+
 import java.util.ArrayList;
 
 public class Sala {

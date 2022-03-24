@@ -1,3 +1,4 @@
+import Persona.AdministrarPuntos;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,6 +1,13 @@
-import org.testng.annotations.Test;
+import Cartelera.Clasificacion;
+import Cartelera.Dimension;
+import Cartelera.Genero;
+import Cartelera.Pelicula;
+import Salas.Sala;
+import org.junit.Test;
+//import org.testng.annotationscd P.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.Assert.assertEquals;
+//import static org.testng.AssertJUnit.assertEquals;
 
 public class TestSala {
     @Test

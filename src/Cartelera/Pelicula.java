@@ -1,3 +1,7 @@
+package Cartelera;
+
+import Utils.Util;
+
 public class Pelicula {
 
     private String infoPelicula;
