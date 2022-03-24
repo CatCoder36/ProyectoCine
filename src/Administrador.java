@@ -66,6 +66,10 @@ public class Administrador {
         }
     }
 
+
+
+
+
     public void agregarPelicula(){
         System.out.println("Inserte el nombre de la pelicula");
         String nombrePelicula = scanner.next();
