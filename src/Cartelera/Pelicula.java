@@ -17,7 +17,7 @@ public class Pelicula {
     Dimension dimension;
     Genero genero;
     static ArrayList<HorarioPelicula> horarios;
-
+    private String salaDeExhibicion;
 
 
     public Pelicula(int ID, String nombrePelicula, String director, Clasificacion clasificacion, String idioma, String estreno, Double duracion, Dimension dimension, Genero genero) {

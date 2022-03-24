@@ -10,10 +10,25 @@ import java.util.ArrayList;
 
 public class Boleteria {
 
+    private int D2;
+    private int D3;
+    private String diaDeLaSemana;
+    private String banco;
+    private int menores10;
     static ArrayList<Cliente> listaclientes;
     private String listaAsientos = "";
     static String metodoPagoCliente;
     static String QR;
+
+    public void establerDescuentoMenores10(int descuento){
+
+    }
+
+    public void establecerPrecios(int d2, int d3){
+        this.D2 = d2;
+        this.D3 = d3;
+    }
+
 
     public Boleteria(){
         listaclientes = new ArrayList<>();
@@ -41,8 +56,8 @@ public class Boleteria {
     public void descuentoPrecio() {
     }
 
-    public void addMetodoPago(String metodoPago)
-    {
+    public void addMetodoPago(String metodoPago, String diaSemana){
+        this.diaDeLaSemana = diaSemana;
         switch (metodoPago)
         {
             case "QR":

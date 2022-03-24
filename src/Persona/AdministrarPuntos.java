@@ -16,4 +16,8 @@ public class AdministrarPuntos {
         return "PUNTOS: "+contadorPuntos;
     }
 
+    public int totalContador(){
+        return contadorPuntos;
+    }
+
 }
