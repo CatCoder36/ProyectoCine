@@ -59,6 +59,6 @@ public class Cine {
         cartelera.addPeliculas(pelicula);
     }
     public void quitarPelicula(Pelicula pelicula){
-        cartelera.removePelicula(pelicula);
+        cartelera.deletePeliculas(pelicula);
     }
 }

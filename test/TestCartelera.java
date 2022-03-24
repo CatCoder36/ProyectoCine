@@ -3,6 +3,9 @@ import Cartelera.Dimension;
 import Cartelera.Genero;
 import Cartelera.Pelicula;*/
 import Cartelera.*;
+import Cartelera.Clasificacion;
+import Cartelera.Dimension;
+import Cartelera.Genero;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
