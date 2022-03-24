@@ -1,5 +1,6 @@
 package Cine;
-
+import Persona.AreaTrabajo;
+import Persona.Empleado;
 import Cartelera.Cartelera;
 import Salas.Sala;
 import Cartelera.Pelicula;
@@ -9,7 +10,9 @@ public class Cine {
     private String nombreCine;
     private ArrayList<Sala> listaSalas = new ArrayList<>();
     private final int NIT = 678934013;
-    private Cartelera cartelera = new Cartelera();
+    Cartelera cartelera = new Cartelera();
+    //pruebas mau
+    ArrayList<Empleado> listaEmpleados = new ArrayList<>();
 
     public Cine(String nombreCine) {
         this.nombreCine = nombreCine;
@@ -58,7 +61,19 @@ public class Cine {
     public void agregarPelicula(Pelicula pelicula){
         cartelera.addPeliculas(pelicula);
     }
-    public void quitarPelicula(Pelicula pelicula){
-        cartelera.deletePeliculas(pelicula);
+    public void quitarPelicula(int idPelicula){
+        cartelera.deletePeliculasPorId(idPelicula);
     }
+
+    public AreaTrabajo getEmpleadoAreaTrabajoPorID(int idEmpleado){
+        for(int empleadoActual = 0; empleadoActual < listaEmpleados.size(); empleadoActual++){
+            if(listaEmpleados.get(empleadoActual).getCarnetIdentidad()==idEmpleado){
+                return listaEmpleados.get(empleadoActual).getCargoEmpleado();
+            }
+        }
+    }
+
+   /* public void agregarEmpleado(Empleado empleado){
+        listaEmpleados.add(empleado);
+    }*/
 }

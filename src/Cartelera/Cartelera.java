@@ -26,8 +26,12 @@ public class Cartelera {
         listaPeliculas.add(pelicula);
     }
 
-    public void deletePeliculas(Pelicula pelicula){     // ADMIN
-        listaPeliculas.remove(pelicula);
+    public void deletePeliculasPorId(int idPelicula){     // ADMIN
+        for(int peliculaActual = 0; peliculaActual < listaPeliculas.size();peliculaActual++){
+            if(listaPeliculas.get(peliculaActual).getIdPelicula() == idPelicula){
+                listaPeliculas.remove(peliculaActual);
+            }
+        }
     }
 
 

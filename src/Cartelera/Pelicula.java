@@ -83,6 +83,10 @@ public class Pelicula {
         return "\t\t| SINOPSIS: " + infoPelicula;
     }
 
+    public int getIdPelicula(){
+        return ID;
+    }
+
 
 
     public String toString() {
