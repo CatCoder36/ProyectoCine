@@ -5,6 +5,7 @@ import Cartelera.Dimension;
 import Cartelera.Genero;
 import Cartelera.Pelicula;
 import Salas.Sala;
+import Util.Util;
 
 import java.util.Scanner;
 
@@ -182,6 +183,15 @@ public class Administrador {
         System.out.println("Insrte la pelicula el id de pelicula que dee quitar");
         int idPelicula = scanner.nextInt();
         cine.quitarPelicula(idPelicula);
+    }
+
+    public void definirPrecioPeliculas2d3d(Cine cine){
+
+        System.out.print("Inserte el precio para las peliculas 2D : ");
+        int precio2D = Util.scanner.nextInt();
+        System.out.print("Inserte un precio para las peliculas 3D : ");
+        int precio3D = Util.scanner.nextInt();
+        cine.cartelera.establecerPrecioEntrada(precio2D, precio3D);
     }
 
     public void agregarEmpleado(){

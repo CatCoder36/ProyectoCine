@@ -10,8 +10,7 @@ public class Cine {
     private String nombreCine;
     private ArrayList<Sala> listaSalas = new ArrayList<>();
     private final int NIT = 678934013;
-    Cartelera cartelera = new Cartelera();
-    //pruebas mau
+    public Cartelera cartelera = new Cartelera();
     ArrayList<Empleado> listaEmpleados = new ArrayList<>();
 
     public Cine(String nombreCine) {
@@ -60,6 +59,7 @@ public class Cine {
 
     public void agregarPelicula(Pelicula pelicula){
         cartelera.addPeliculas(pelicula);
+        pelicula.asisgnandoSalaExhibicion(listaSalas, pelicula);
     }
     public void quitarPelicula(int idPelicula){
         cartelera.deletePeliculasPorId(idPelicula);

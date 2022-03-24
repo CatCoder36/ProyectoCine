@@ -1,7 +1,7 @@
 package Persona;
 
 public class AdministrarPuntos {
-    //TEST
+
     int contadorPuntos;
 
     public String aumentarPuntos(int puntos, double rebaja, int cantidadBoletos){

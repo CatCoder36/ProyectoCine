@@ -1,4 +1,5 @@
 package Cartelera;
+import Salas.Sala;
 import Util.Util;
 
 import java.util.ArrayList;
@@ -30,6 +31,22 @@ public class Pelicula {
         this.dimension = dimension;
         this.genero = genero;
         horarios = new ArrayList<>();
+
+
+    }
+
+    public void asisgnandoSalaExhibicion(ArrayList<Sala> listaSalas,Pelicula pelicula){
+        for(int salaActual = 0; salaActual < listaSalas.size(); salaActual++){
+            if(listaSalas.get(salaActual).agregarPeliculaSala(pelicula)){
+                salaDeExhibicion = listaSalas.get(salaActual).getCodigoSala();
+                break;
+
+            }
+        }
+    }
+
+    public String consultandoSalaExhibicion(){
+        return salaDeExhibicion;
     }
 
 
@@ -85,6 +102,10 @@ public class Pelicula {
 
     public int getIdPelicula(){
         return ID;
+    }
+
+    public String getNombrePelicula(){
+        return nombrePelicula;
     }
 
 

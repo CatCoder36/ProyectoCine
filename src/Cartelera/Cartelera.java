@@ -42,7 +42,8 @@ public class Cartelera {
             mostrarPeli = mostrarPeli + mostrarpeliculas.toString();
             peliculaMostradaPublico = peliculaMostradaPublico + "NOMBRE: " + mostrarpeliculas.mostrarPeliculaSeleccionadaNombre()
                     + "\t| CLASIFICACION: " + mostrarpeliculas.clasificacion
-                    + "\t| IDIOMA: " + mostrarpeliculas.idiomaPelicula() + "\n";
+                    + "\t| IDIOMA: " + mostrarpeliculas.idiomaPelicula() + "\n"
+                    + "\t| SE EXPONE EN LA SALA: "+mostrarpeliculas.consultandoSalaExhibicion();
         }
         return mostrarPeli;
     }
@@ -145,5 +146,14 @@ public class Cartelera {
             }
         }
         return mostraPrecio23D;
+    }
+
+    public String encontraSalaPelicula(String nombre){
+        for (int pelicualActual = 0; pelicualActual < listaPeliculas.size(); pelicualActual++){
+            if(listaPeliculas.get(pelicualActual).getNombrePelicula().equals(nombre)){
+            //TODO: Terminar algoritmo de busqueda de sala
+            }
+        }
+        return null;
     }
 }

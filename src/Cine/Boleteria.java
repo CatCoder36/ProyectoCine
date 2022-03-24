@@ -32,33 +32,6 @@ public class Boleteria {
         return listaAsientos;
     }
 
-    /*public void addCliente(Cliente cliente){
-        listaclientes.add(cliente);
-    }*/
-
-    //ESTE CODIFO FUÉ TRASLADADO A REGISTROCLIENTES
-    /*public String mostrarListadeClientes(){
-        String clientes = "";
-        for (Cliente mostrarClientes: listaclientes){
-            clientes = clientes + Util.lineaCorta + "\n" + mostrarClientes.toString() + "\n";
-        }
-        return clientes;
-    }
-
-    public String mostrarClienteEspecifico(String nombreCliente, int carnetIdentidad){
-        String may = nombreCliente.toUpperCase();
-        String datosCliente = "";
-        for (Persona datoCliente: listaclientes){
-            if (may.equals(datoCliente.getNombre()) || carnetIdentidad == datoCliente.getCarnetIdentidad()){
-                datosCliente = Util.lineaCorta + "\n" + "CLIENTE " + datoCliente.getNombre() + " |\n" + Util.lineaCorta + "\n" + datoCliente;
-            }
-        }
-        return datosCliente;
-    }*/
-
-
-
-
     public void definirPrecioPelicula() {
     }
 

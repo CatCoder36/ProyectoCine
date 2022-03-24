@@ -32,13 +32,6 @@ public class Sala {
     public int getNumeroDeAsientos(){
         return listaAsientos.size();
     }
-
-    //Gestion de asientos ocupados y libres
-    public void gestionAsientosSala(){
-        //TODO
-
-
-    }
     //Se generan los asientos en la clase para asignarlas una ubicacion de manera automatica
     private void generandoAsientos(){
 
