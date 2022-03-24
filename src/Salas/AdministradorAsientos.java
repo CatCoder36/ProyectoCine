@@ -1,3 +1,5 @@
+package Salas;
+
 import java.util.ArrayList;
 
 public class AdministradorAsientos {

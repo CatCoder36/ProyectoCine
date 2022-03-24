@@ -1,3 +1,5 @@
+package CuentaBancaria;
+
 import java.util.ArrayList;
 
 public class Banco {
@@ -37,9 +39,9 @@ public class Banco {
     {
         listaBancosDisponibles.add("Elefante");
         listaBancosDisponibles.add("BCP");
-        listaBancosDisponibles.add("Banco Sol");
-        listaBancosDisponibles.add("Banco Fácil");
-        listaBancosDisponibles.add("Banco Visa");
+        listaBancosDisponibles.add("CuentaBancaria.Banco Sol");
+        listaBancosDisponibles.add("CuentaBancaria.Banco Fácil");
+        listaBancosDisponibles.add("CuentaBancaria.Banco Visa");
     }
 
     public boolean verificarListaBancosDisponibles(String nombreBanco) // ***
@@ -115,9 +117,9 @@ public class Banco {
         }
     }
 
-    @Override // Factura o Estado de cuenta // ***
+    @Override // Factura o Salas.Estado de cuenta // ***
     public String toString() {
-        return "Banco{" +
+        return "CuentaBancaria.Banco{" +
                 "fechaAfiliacion='" + fechaAfiliacion + '\'' +
                 ", bancoWeb=" + bancoWeb +
                 ", nombreBancoAfiiado='" + nombreBancoAfiiado + '\'' +

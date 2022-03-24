@@ -1,6 +1,14 @@
-import org.testng.annotations.Test;
+import Cine.*;
+import Persona.Cliente;
+import Persona.Persona;
+import Salas.AdministradorAsientos;
+import Salas.Sala;
+import Utils.Util;
+import org.junit.Test;
+//import org.testng.annotations.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.Assert.assertEquals;
+//import static org.testng.AssertJUnit.assertEquals;
 
 
 public class TestBoleteria {
@@ -35,12 +43,7 @@ public class TestBoleteria {
 
         //  REGISTRAR AL CLIENTE
 
-        Cliente cliente1 = new Cliente("Juan Rocabado", 9865321, "Bolivia", 10,  05, 2004);
-        Cliente cliente2 = new Cliente("Pedro Sanchez", 1564654, "Bolivia", 19, 03, 1992);
-        Cliente cliente3 = new Cliente("Elias Monterrey", 8153133, "Argentina", 29, 12, 2002);
-        Cliente cliente4 = new Cliente("Matias Hidalgo", 75211656, "Bolivia", 5, 11, 1998);
-        Cliente cliente5 = new Cliente("Antonio Banderas", 91516556, "Bolivia", 1, 8, 2011);
-
+        Cliente cliente1 = new Cliente("Denis Jorge", "Gandarillas", "Delgado", 9865321, "Boliviano", 10, 05, 2004, "Masculino"); 
         boleteria.addCliente(cliente1);
         boleteria.addCliente(cliente2);
         boleteria.addCliente(cliente3);

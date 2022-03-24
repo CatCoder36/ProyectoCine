@@ -1,4 +1,12 @@
+package Cine;
+
+
+import Persona.Cliente;
+import Persona.Persona;
+import Utils.Util;
+
 import java.util.ArrayList;
+
 
 public class Boleteria {
 
@@ -37,9 +45,9 @@ public class Boleteria {
     public String mostrarClienteEspecifico(String nombreCliente, int carnetIdentidad){
         String may = nombreCliente.toUpperCase();
         String datosCliente = "";
-        for (Cliente datoCliente: listaclientes){
-            if (may.equals(datoCliente.getNombreCliente()) || carnetIdentidad == datoCliente.getCarnetIdentidadCliente()){
-                datosCliente = Util.lineaCorta + "\n" + "CLIENTE " + datoCliente.getNombreCliente() + " |\n" + Util.lineaCorta + "\n" + datoCliente;
+        for (Persona datoCliente: listaclientes){
+            if (may.equals(datoCliente.getNombre()) || carnetIdentidad == datoCliente.getCarnetIdentidad()){
+                datosCliente = Util.lineaCorta + "\n" + "CLIENTE " + datoCliente.getNombre() + " |\n" + Util.lineaCorta + "\n" + datoCliente;
             }
         }
         return datosCliente;

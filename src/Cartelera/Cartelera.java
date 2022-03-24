@@ -1,6 +1,13 @@
+package Cartelera;
+
+import Utils.*;
+
 import java.util.ArrayList;
 
 public class Cartelera {
+
+
+
     static final int precio2D = 40;
     static final int precio3D = 60;
     static ArrayList<Pelicula> listaPeliculas;
@@ -80,7 +87,7 @@ public class Cartelera {
                 }
                 else if (peliculaMostrar.dimension == Dimension.D3){
                     nombrePelicula = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio3D + " bs";
-                    peliculaSeleccionadaID = Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio3D + " bs";
+                    peliculaSeleccionadaID = Utils.Util.lineaCorta + "\n" + "PELICULA SELECCIONADA |\n" + peliculaMostrar + "\t\t| PRECIO: " + precio3D + " bs";
                 }
             }
         }

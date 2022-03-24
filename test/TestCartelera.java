@@ -1,6 +1,13 @@
-import org.testng.annotations.Test;
+/*import Cartelera.Cartelera;
+import Cartelera.Dimension;
+import Cartelera.Genero;
+import Cartelera.Pelicula;*/
+import Cartelera.*;
+import org.junit.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.Assert.assertEquals;
+//import org.testng.annotations.Test;
+
 
 public class TestCartelera {
     Cartelera cartelera = new Cartelera();
@@ -58,7 +65,7 @@ public class TestCartelera {
         assertEquals("Español Latino", peliculaSING2.idiomaPelicula());
 
 
-        /* Mostrar Cartelera */
+        /* Mostrar Cartelera.Cartelera */
         cartelera.mostrarPeliculas();
         assertEquals(5, cartelera.numeroDePeliculas());
         assertEquals("PUBLICO |" +
@@ -73,7 +80,7 @@ public class TestCartelera {
 
 
 
-        /* Mostrar Pelicula por el nombre o por el ID*/
+        /* Mostrar Cartelera.Pelicula por el nombre o por el ID*/
         cartelera.mostrarPeliculaIDNombre("Sing 2");
         //System.out.println(cartelera.getPeliculaSeleccionadaNombre());
         assertEquals(cartelera.getPeliculaSeleccionadaNombre(), cartelera.mostrarPeliculaIDNombre("sing 2"));
