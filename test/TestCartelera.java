@@ -14,7 +14,7 @@ public class TestCartelera {
 
     @Test
     public void testMostrarCartelera(){
-        Pelicula peliculaBatman = new Pelicula(1,"BATMAN", "Matt Reves", Clasificacion.CLASIFICACION_B, "Español Latino", "3 de Marzo de 2022", 190.0, Dimension.D3, Genero.ACCION);
+        Pelicula peliculaBatman = new Pelicula(1,"BATMAN", "Matt Reves", Clasificacion.CLASIFICACION_B, "Español Latino", "3 de enero",190.0, Dimension.D3, Genero.ACCION);
         peliculaBatman.addInfo("La trama es desconocida");
         cartelera.addPeliculas(peliculaBatman);
         assertEquals("\t\t| SINOPSIS: La trama es desconocida" , peliculaBatman.mostrarInfo());

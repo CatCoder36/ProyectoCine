@@ -44,7 +44,7 @@ public class TestSala {
 
     @Test
     public void testAgregarPelicula(){
-        Pelicula peliculaBatman = new Pelicula(1,"BATMAN", "Matt Reves", Clasificacion.CLASIFICACION_B, "Español Latino", "3 de Marzo de 2022", 190.0, Dimension.D3, Genero.ACCION);
+        Pelicula peliculaBatman = new Pelicula(1,"BATMAN", "Matt Reves", Clasificacion.CLASIFICACION_B, "Español Latino", "23 de marzo",190.0, Dimension.D3, Genero.ACCION);
         Sala salaPrueba1 = new Sala(24,"A",8,12);
 
         salaPrueba1.agregarPeliculaSala(peliculaBatman);

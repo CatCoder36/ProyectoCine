@@ -24,6 +24,10 @@ public class Cartelera {
         listaPeliculas.add(pelicula);
     }
 
+    public void removePelicula(Pelicula pelicula){
+        listaPeliculas.remove(pelicula);
+    }
+
     public void deletePeliculas(Pelicula pelicula){     // ADMIN
         listaPeliculas.remove(pelicula);
     }
@@ -31,6 +35,7 @@ public class Cartelera {
     public void addHoraPelicula(HorarioPelicula horarioPelicula){
         horarios.add(horarioPelicula);
     }
+
 
     public String mostrarHorarioPelicula(){
         String hora = "";

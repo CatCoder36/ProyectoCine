@@ -12,7 +12,7 @@ public class Sala {
     private ArrayList <Asiento> listaAsientos;
     private ArrayList<Pelicula> peliculasPorReproducir = new ArrayList<>();
 
-    AdministradorAsientos administradorAsientos;
+    public AdministradorAsientos administradorAsientos;
 
 
 

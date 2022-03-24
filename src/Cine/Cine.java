@@ -1,12 +1,15 @@
 package Cine;
 
+import Cartelera.Cartelera;
 import Salas.Sala;
+import Cartelera.Pelicula;
 
 import java.util.ArrayList;
 public class Cine {
     private String nombreCine;
     private ArrayList<Sala> listaSalas = new ArrayList<>();
     private final int NIT = 678934013;
+    private Cartelera cartelera = new Cartelera();
 
     public Cine(String nombreCine) {
         this.nombreCine = nombreCine;
@@ -50,5 +53,12 @@ public class Cine {
 
     public String getNombreCine() {
         return nombreCine;
+    }
+
+    public void agregarPelicula(Pelicula pelicula){
+        cartelera.addPeliculas(pelicula);
+    }
+    public void quitarPelicula(Pelicula pelicula){
+        cartelera.removePelicula(pelicula);
     }
 }

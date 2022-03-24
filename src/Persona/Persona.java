@@ -132,4 +132,5 @@ public abstract class Persona {
     }
 
     public abstract String toString(Persona persona);
+
 }
