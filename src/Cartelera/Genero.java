@@ -1,3 +1,5 @@
+package Cartelera;
+
 public enum Genero {
 
     ACCION, ANIMACION, CIENCIA, FICCION, COMEDIA, DRAMA, FANTASIA, MUSICAL, ROMANCE,

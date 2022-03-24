@@ -1,3 +1,5 @@
+package Cartelera;
+
 import java.util.ArrayList;
 import java.util.Locale;
 

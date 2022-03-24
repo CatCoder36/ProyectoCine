@@ -1,4 +1,7 @@
-import org.testng.annotations.Test;
+import Cine.Administrador;
+import Cine.Cine;
+import org.junit.Test;
+//import org.testng.annotations.Test;
 
 public class testAdministrador {
 

@@ -1,18 +1,22 @@
-import org.testng.annotations.Test;
-import static org.testng.AssertJUnit.assertEquals;
+import CuentaBancaria.Banco;
+import org.junit.Test;
+//import org.testng.annotations.Test;
+
+import static org.junit.Assert.assertEquals;
+//import static org.testng.AssertJUnit.assertEquals;
 import java.util.ArrayList;
 
 
 public class TestBanco {
 
 
-    // Instancias de Banco
-    Banco banco1 = new Banco("Cine OOP", 159, "01/01/2020",1500,true,
-            "Banco Elefante");
-    Banco banco2 = new Banco("Cine OOP", 259, "01/01/2020",1500,false,
-            "Banco Visa");
-    Banco banco3 = new Banco("Cine OOP", 359, "01/01/2020",1500,true,
-            "Banco Union");
+    // Instancias de CuentaBancaria.Banco
+    Banco banco1 = new Banco("Cine.Cine OOP", 159, "01/01/2020",1500,true,
+            "CuentaBancaria.Banco Elefante");
+    Banco banco2 = new Banco("Cine.Cine OOP", 259, "01/01/2020",1500,false,
+            "CuentaBancaria.Banco Visa");
+    Banco banco3 = new Banco("Cine.Cine OOP", 359, "01/01/2020",1500,true,
+            "CuentaBancaria.Banco Union");
 
     ArrayList<Banco> bancosAfiliados = new ArrayList<>();
 
@@ -32,9 +36,9 @@ public class TestBanco {
         String usernameBanco2 = banco2.getUsername();
         String usernameBanco3 = banco3.getUsername();
 
-        assertEquals("Cine OOP", usernameBanco1);
-        assertEquals("Cine OOP", usernameBanco2);
-        assertEquals("Cine OOP", usernameBanco3);
+        assertEquals("Cine.Cine OOP", usernameBanco1);
+        assertEquals("Cine.Cine OOP", usernameBanco2);
+        assertEquals("Cine.Cine OOP", usernameBanco3);
     }
 
     @Test
@@ -80,9 +84,9 @@ public class TestBanco {
         String nombreAfiliadoBanco2 = banco2.getNombreBancoAfiliado();
         String nombreAfiliadoBanco3 = banco3.getNombreBancoAfiliado();
 
-        assertEquals("Banco Elefante", nombreAfiliadoBanco1);
-        assertEquals("Banco Visa", nombreAfiliadoBanco2);
-        assertEquals("Banco Union", nombreAfiliadoBanco3);
+        assertEquals("CuentaBancaria.Banco Elefante", nombreAfiliadoBanco1);
+        assertEquals("CuentaBancaria.Banco Visa", nombreAfiliadoBanco2);
+        assertEquals("CuentaBancaria.Banco Union", nombreAfiliadoBanco3);
     }
 
 }

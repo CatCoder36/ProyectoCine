@@ -1,3 +1,5 @@
+package Salas;
+
 public class Asiento {
 // PRUEBA GIT
 //Atributos

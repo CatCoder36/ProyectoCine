@@ -1,5 +1,8 @@
-import java.util.ArrayList;
+package Cine;
 
+import Salas.Sala;
+
+import java.util.ArrayList;
 public class Cine {
     private String nombreCine;
     private ArrayList<Sala> listaSalas = new ArrayList<>();

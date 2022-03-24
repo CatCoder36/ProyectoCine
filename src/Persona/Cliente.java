@@ -10,13 +10,13 @@ public class Cliente extends Persona{
 
     //Este metodo se encarga de supervisar si es conciderado como una persona menor de 10 años o una persona de la tercera edad.
     public String verificacionEdad(){
+
         if (edad() <= 10){
             return "MENOR DE EDAD \nEDAD: "+edad();
-        }else if (edad() >= 60){
+        } if (edad() >= 60){
             return "TERCERA EDAD \nEDAD: "+edad();
-        }else{
-            return "NORMAL\nEDAD: "+edad();
         }
+        return "NORMAL \nEDAD: "+ edad();
     }
 
     @Override
